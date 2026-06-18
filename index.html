@@ -1,48 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chukkala Kavya Sri | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f5f5dc;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #e8dcc0;
+}
+
+nav h2 { color: #5a4a3f; }
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 { font-size: 40px; }
+
+.hero span { color: #c19a6b; }
+
+.hero p { margin: 10px 0; color: #555; }
+
+.btn {
+    background: #c19a6b;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #5a4a3f;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fffaf0;
+    padding: 20px;
+    margin: 10px;
+    width: 280px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+footer {
+    background: #e8dcc0;
+    padding: 20px;
+    text-align: center;
+    color: #555;
+}
+
+@media(max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
 </head>
+
 <body>
 
+<!-- NAVBAR -->
 <nav>
     <h2>Chukkala Kavya Sri</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-    <h1>Hi, I'm Chukkala Kavya Sri</h1>
-    <p>Aspiring Full Stack Developer</p>
+    <h1>Hi, I'm <span>Chukkala Kavya Sri</span> 👋</h1>
+    <p>Aspiring Full Stack Developer | Problem Solver | Passionate Learner | Dancer</p>
+    <button class="btn" onclick="scrollToSection('contact')">Hire Me</button>
 </div>
 
-<section>
-<h2>About Me</h2>
-<p>I am learning full stack development and building projects.</p>
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        Hi, I'm <strong>Chukkala Kavya Sri</strong>, an aspiring Full Stack Developer who is passionate about building clean, responsive, and user-friendly web applications. I enjoy learning new technologies and applying them to real-world projects.
+        <br><br>
+        I have hands-on experience with HTML, CSS, JavaScript, PHP, MySQL, and GitHub. I recently developed a Student Management System using CRUD operations and also worked on a Period Tracking System project that focuses on solving real-world health-related problems using programming logic.
+        <br><br>
+        I have a strong interest in designing and love creating visually appealing interfaces along with functional applications. I enjoy exploring UI/UX concepts to enhance user experience.
+        <br><br>
+        Apart from coding, I love dancing and reading books, which help me stay creative, focused, and inspired.
+        <br><br>
+        I am a quick learner with a growth mindset, always looking for opportunities to improve my skills and contribute to meaningful projects.
+    </p>
 </section>
 
-<section>
-<h2>Skills</h2>
-<p>HTML, CSS, JavaScript, PHP, MySQL</p>
+<!-- SKILLS -->
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="card-container">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">PHP</div>
+        <div class="card">MySQL</div>
+        <div class="card">GitHub</div>
+    </div>
 </section>
 
-<section>
-<h2>Projects</h2>
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
 
-<h3>Student Management System</h3>
-<button>Live Demo</button>
+    <div class="card-container">
 
-<h3>Period Tracking System</h3>
-<button>View Code</button>
+        <!-- CRUD PROJECT -->
+        <div class="card">
+            <h3>Student Management System</h3>
+            <p>
+                A full stack CRUD application built using PHP and MySQL.
+                It allows users to add, view, update, and delete student records.
+            </p>
 
+            <button class="btn" onclick="openProject('http://localhost/index.php')">
+                Live Demo
+            </button>
+        </div>
+
+        <!-- PERIOD TRACKER -->
+        <div class="card">
+            <h3>Period Tracking System</h3>
+            <p>
+                A C-based application designed to track menstrual cycles and provide predictions.
+                It focuses on solving real-world health tracking problems using programming logic.
+            </p>
+
+            <button class="btn" onclick="openProject('https://github.com/HexaFusion-G6/-period-tracker-c-project.git')">
+                View Code
+            </button>
+        </div>
+
+    </div>
 </section>
 
-<section>
-<h2>Contact</h2>
-<p>Email: kavyachukkala2107@gmail.com</p>
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
 
-<button>GitHub</button>
-<button>LinkedIn</button>
+    <p>Email: kavyachukkala2107@gmail.com</p>
 
+    <br>
+
+    <button class="btn" onclick="openProject('https://github.com/kavyachukkala')">
+        GitHub
+    </button>
+
+    <button class="btn" onclick="openProject('https://www.linkedin.com/in/kavya-sri-chukkala-293709375')">
+        LinkedIn
+    </button>
 </section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Chukkala Kavya Sri | Built with 💚</p>
+</footer>
+
+<!-- JS -->
+<script>
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
+
+function openProject(url) {
+    window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
